@@ -1,86 +1,218 @@
-# Automated Global Data Ingestion Pipeline (ETL)
+🌍 Automated Global Data Ingestion Pipeline (ETL)
 
-An end-to-end, production-grade cloud data engineering pipeline that automates the extraction, transformation, deduplication, and loading (ETL) of global development and socioeconomic metrics. Running completely serverless, the pipeline ensures downstream analytics applications always have access to a clean, stable, and self-updating data warehouse.
+Production-grade serverless ETL pipeline that automates ingestion of global socioeconomic datasets from REST APIs and Kaggle sources using Python and GitHub Actions. The system performs automated extraction, transformation, deduplication, hashing-based CDC validation, and versioned storage for downstream analytics and BI platforms.
 
----
+🚀 Project Overview
 
-## 🚀 Key Features & Architecture
+This project simulates a real-world cloud data engineering workflow where multiple external data sources are continuously monitored, processed, validated, and stored automatically.
 
-- **Automated Multi-Source Extraction:** Uses Python to programmatically extract data streams from live REST APIs (World Bank, WHO Global Health Observatory) and third-party dataset providers via the Kaggle ecosystem.
-- **Serverless Automation (Orchestration):** Managed via **GitHub Actions** on a daily cron schedule (`0 0 * * *`), eliminating the need for dedicated on-premise infrastructure or manual script execution.
-- **Change-Data-Capture (CDC) via Hashing:** Implements structural data integrity verification using **MD5 cryptographic checksums**. If upstream data hasn't updated, the system halts storage writes to save resources. If variations are detected, it dynamically writes an immutable historical snapshot.
-- **Stable Machine Learning & BI Endpoints:** Maintains a decoupled storage layer where data assets are mirrored into unique historical tracking versions alongside a permanent `latest.csv` pointer. This ensures connected Power BI, Tableau, or Excel dashboards never break when updates occur.
-- **Secured Authentication Vault:** Implements production-level secret management by dynamically mapping encrypted GitHub Actions repository secrets into execution environment variables (`KAGGLE_USERNAME`, `KAGGLE_KEY`).
+The pipeline runs completely serverless using GitHub Actions and updates datasets daily without manual intervention.
 
----
+The architecture ensures:
 
-## 🛠️ Tech Stack & Tools
+Automated daily ingestion
+Clean and standardized datasets
+Change detection using MD5 hashing
+Historical data versioning
+Stable endpoints for BI dashboards
+Secure secret management
+Automated reporting and logging
+🛠️ Tech Stack
+Category	Tools & Technologies
+Language	Python 3.10
+Data Processing	Pandas
+API Integration	Requests
+Dataset Ingestion	Kagglehub
+Automation	GitHub Actions
+Scheduling	Cron Jobs
+Version Control	Git & GitHub
+Logging	Python Logging
+Data Validation	Hashlib (MD5)
+Storage Layer	Git-based Data Lakehouse
+📊 Automated Data Sources
+Source	Dataset	Method	Metric
+World Bank	GDP Current USD	REST API	Economic Growth
+World Bank	Total Population	REST API	Population Tracking
+WHO GHO	Life Expectancy	OData API	Healthcare Indicators
+WHO GHO	Infant Mortality	OData API	Mortality Statistics
+Kaggle	Avocado Prices	Kaggle API	Retail Pricing Analytics
+⚙️ Pipeline Architecture
+External APIs / Kaggle
+        ↓
+Python ETL Pipeline
+        ↓
+Data Cleaning & Transformation
+        ↓
+MD5 Hash Validation (CDC)
+        ↓
+Versioned Data Storage
+        ↓
+latest.csv Stable Endpoints
+        ↓
+Power BI / Excel / Tableau
+🔄 How the Pipeline Works
+1. Automated Trigger
 
-- **Language:** Python 3.10
-- **Libraries:** Pandas (Data Transformation), Requests (API Ingestion), Kagglehub (Data Ingestion), Loggers & Hashlib (System Monitoring & Fingerprinting)
-- **CI/CD & Orchestration:** GitHub Actions Workflow Engine
-- **Storage Layer:** Git-based Data Lakehouse (`./data_warehouse`)
+GitHub Actions automatically triggers the pipeline every day at midnight UTC using cron scheduling.
 
----
+schedule:
+  - cron: '0 0 * * *'
+2. Data Extraction
 
-## 📁 Repository Directory Structure
+The system extracts data from:
 
-```text
+World Bank APIs
+WHO Global Health Observatory APIs
+Kaggle datasets
+
+using Python requests and Kagglehub.
+
+3. Data Transformation
+
+Raw JSON responses are transformed into clean Pandas DataFrames with standardized schemas.
+
+Operations include:
+
+Null handling
+Column normalization
+Type conversion
+Data cleaning
+4. Change Data Capture (CDC)
+
+The pipeline computes MD5 hashes for datasets.
+
+If no changes are detected:
+
+Storage writes are skipped
+
+If changes are detected:
+
+New historical snapshots are created automatically
+
+This reduces unnecessary storage operations and preserves historical tracking.
+
+5. Data Versioning
+
+Each dataset maintains:
+
+Historical snapshots
+Permanent latest.csv endpoint
+
+This ensures downstream dashboards never break after updates.
+
+🔐 Secure Secret Management
+
+Sensitive credentials are stored securely using GitHub Secrets.
+
+Environment variables used:
+
+KAGGLE_USERNAME
+KAGGLE_KEY
+
+Secrets are dynamically injected during workflow execution.
+
+📁 Repository Structure
 ├── .github/workflows/
-│   └── data_pipeline.yml          # GitHub Actions serverless cron configuration
-├── data_warehouse/                # Automated Local Storage Layer
+│   └── data_pipeline.yml
+│
+├── data_warehouse/
 │   ├── kaggle/
-│   │   └── avocado_prices/        # Deduplicated avocado retail logs
+│   │   └── avocado_prices/
+│   │
 │   ├── who_gho/
-│   │   ├── infant_mortality/      # Global infant mortality tracking matrices
-│   │   └── life_expectancy/       # Global life expectancy index records
+│   │   ├── infant_mortality/
+│   │   └── life_expectancy/
+│   │
 │   └── world_bank/
-│       ├── gdp_current_usd/       # Worldwide GDP (Current USD)
-│       └── total_population/      # Global population registries
+│       ├── gdp_current_usd/
+│       └── total_population/
+│
 ├── logs/
-│   └── pipeline_execution.log     # Detailed system event logging files
+│   └── pipeline_execution.log
+│
 ├── reports/
-│   └── report_[timestamp].json    # Structured JSON pipeline run diagnostic receipts
-├── data_ingestion_pipeline.py     # Main Python ETL engine
-└── README.md                      # Project documentation (You are here)
+│   └── report_[timestamp].json
+│
+├── data_ingestion_pipeline.py
+│
+└── README.md
+📈 Business Value
 
+This project demonstrates how modern organizations automate data collection pipelines for analytics and reporting systems.
 
-## 📊 Automated Ingestion Targets
+Key benefits include:
 
-| Source | Dataset ID | Method | Core Metric |
-| :--- | :--- | :--- | :--- |
-| **World Bank** | `gdp_current_usd` | REST API | Gross Domestic Product |
-| **World Bank** | `total_population` | REST API | Total Population |
-| **WHO GHO** | `life_expectancy` | OData | Life Expectancy at Birth |
-| **WHO GHO** | `infant_mortality` | OData | Infant Mortality Rate |
-| **Kaggle** | `avocado_prices` | Kaggle API | Retail Vol & Pricing |
+Eliminates manual data collection
+Provides reliable daily updates
+Supports real-time BI reporting
+Reduces duplicate storage writes
+Maintains historical records
+Enables scalable analytics workflows
+📊 BI Tool Integration
 
----
+The generated latest.csv files can be connected directly into:
 
-## 🔄 How the Automation Loop Executes
+Microsoft Excel
+Power BI
+Tableau
 
-1. **Trigger:** The GitHub Actions workflow wakes up automatically every single day at midnight UTC.
-2. **Infrastructure Standup:** A serverless Linux runtime container initializes, configures Python 3.10, and upgrades dependencies (`pandas`, `requests`, `kagglehub`).
-3. **Secure Authentication:** The virtual environment safely maps repository secrets to verify data extraction access points.
-4. **ETL Execution:** The Python pipeline extracts raw JSON objects, cleans anomalies into uniform schema data frames, and computes MD5 values.
-5. **Data Mirroring & Version Control:** Fresh updates are committed back onto the master branch automatically by an authorized execution bot (`github-actions[bot]`).
+using GitHub raw file URLs.
 
----
+Example Workflow
+Excel / Power Query
+Open GitHub raw CSV URL
+Copy raw file link
+Excel → Data → From Web
+Paste URL
+Refresh anytime for live updates
+🧠 Skills Demonstrated
+ETL Pipeline Development
+Data Engineering
+API Integration
+Workflow Automation
+CI/CD Pipelines
+GitHub Actions
+Change Data Capture (CDC)
+Data Validation
+Logging & Monitoring
+Data Warehousing
+Cloud Automation
+Version Control
+Business Intelligence Integration
+📸 Recommended Screenshots
 
-## 🔌 Connecting This Live Feed to Downstream Tools
+Add these screenshots to improve portfolio quality:
 
-Because this pipeline outputs static, stable file paths (`latest.csv`), you can hook these assets directly into popular Business Intelligence tools for real-time reporting:
+GitHub Actions workflow success
+Pipeline execution logs
+Generated CSV outputs
+Folder structure
+Power BI dashboard connection
+Historical snapshot examples
+🎯 Future Improvements
 
-### For Microsoft Excel / Power Query
+Potential enhancements for future versions:
 
-1. Navigate to the desired data asset directory in this repository (e.g., `data_warehouse/world_bank/gdp_current_usd/latest.csv`).
-2. Click the **Raw** view button on GitHub and copy the complete URL string.
-3. Open Excel, navigate to the **Data** ribbon, and select **From Web**.
-4. Paste the raw URL string, then click **Load**.
-5. *To get updates, simply open your spreadsheet and click **Data** -> **Refresh All**.*
+Docker containerization
+AWS S3 or Azure Blob storage
+Apache Airflow orchestration
+Data quality monitoring
+Email alert system
+Snowflake or BigQuery integration
+Stream processing support
+Unit & integration testing
+👨‍💻 Author
 
-### For Power BI / Tableau
+Developed by Jumma Mohammad
+Aspiring Data Engineer & Data Analyst focused on automation, cloud pipelines, analytics engineering, and business intelligence.
 
-- Select **Get Data** -> **Web Input Source**, provide the secure GitHub raw asset URL link, and set a daily schedule refresh cadence matching the midnight execution routine.
+⭐ Project Highlights
 
-
+✅ Fully Automated ETL Pipeline
+✅ Serverless Daily Execution
+✅ Multi-Source Data Ingestion
+✅ Production-Style Architecture
+✅ Change Detection with MD5 Hashing
+✅ Historical Data Versioning
+✅ BI Tool Integration Ready
+✅ Real-World Data Engineering Workflow
