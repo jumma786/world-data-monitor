@@ -1,0 +1,7 @@
+your-project-folder/
+│
+├── .github/
+│   └── workflows/
+│       └── data_pipeline.yml     <-- (File 2 goes here)
+│
+└── data_ingestion_pipeline.py    <-- (File 1 goes here)
