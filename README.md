@@ -235,19 +235,6 @@ using GitHub raw file URLs.
 
 ---
 
-# 📸 Recommended Screenshots
-
-Add these screenshots to improve portfolio quality:
-
-- GitHub Actions workflow success
-- Pipeline execution logs
-- Generated CSV outputs
-- Folder structure
-- Power BI dashboard connection
-- Historical snapshot examples
-
----
-
 # 🎯 Future Improvements
 
 Potential enhancements for future versions:
