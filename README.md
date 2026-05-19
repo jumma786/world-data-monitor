@@ -44,7 +44,6 @@ An end-to-end, production-grade cloud data engineering pipeline that automates t
 ├── data_ingestion_pipeline.py     # Main Python ETL engine
 └── README.md                      # Project documentation (You are here)
 
----
 
 ## 📊 Automated Ingestion Targets
 
