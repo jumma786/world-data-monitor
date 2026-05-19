@@ -2,8 +2,8 @@ name: Automated Data Ingestion Pipeline
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Automated execution run daily at 00:00 UTC
-  workflow_dispatch: # Enables direct execution triggers inside Github UI
+    - cron: '0 0 * * *' # Automated job runs every single night at 00:00 UTC
+  workflow_dispatch: # Enables your manual "Run workflow" drop-down trigger button
 
 jobs:
   run-pipeline:
