@@ -44,4 +44,44 @@ An end-to-end, production-grade cloud data engineering pipeline that automates t
 ├── data_ingestion_pipeline.py     # Main Python ETL engine
 └── README.md                      # Project documentation (You are here)
 
+---
+
+## 📊 Automated Ingestion Targets
+
+| Source | Dataset ID | Method | Core Metric |
+| :--- | :--- | :--- | :--- |
+| **World Bank** | `gdp_current_usd` | REST API | Gross Domestic Product |
+| **World Bank** | `total_population` | REST API | Total Population |
+| **WHO GHO** | `life_expectancy` | OData | Life Expectancy at Birth |
+| **WHO GHO** | `infant_mortality` | OData | Infant Mortality Rate |
+| **Kaggle** | `avocado_prices` | Kaggle API | Retail Vol & Pricing |
+
+---
+
+## 🔄 How the Automation Loop Executes
+
+1. **Trigger:** The GitHub Actions workflow wakes up automatically every single day at midnight UTC.
+2. **Infrastructure Standup:** A serverless Linux runtime container initializes, configures Python 3.10, and upgrades dependencies (`pandas`, `requests`, `kagglehub`).
+3. **Secure Authentication:** The virtual environment safely maps repository secrets to verify data extraction access points.
+4. **ETL Execution:** The Python pipeline extracts raw JSON objects, cleans anomalies into uniform schema data frames, and computes MD5 values.
+5. **Data Mirroring & Version Control:** Fresh updates are committed back onto the master branch automatically by an authorized execution bot (`github-actions[bot]`).
+
+---
+
+## 🔌 Connecting This Live Feed to Downstream Tools
+
+Because this pipeline outputs static, stable file paths (`latest.csv`), you can hook these assets directly into popular Business Intelligence tools for real-time reporting:
+
+### For Microsoft Excel / Power Query
+
+1. Navigate to the desired data asset directory in this repository (e.g., `data_warehouse/world_bank/gdp_current_usd/latest.csv`).
+2. Click the **Raw** view button on GitHub and copy the complete URL string.
+3. Open Excel, navigate to the **Data** ribbon, and select **From Web**.
+4. Paste the raw URL string, then click **Load**.
+5. *To get updates, simply open your spreadsheet and click **Data** -> **Refresh All**.*
+
+### For Power BI / Tableau
+
+- Select **Get Data** -> **Web Input Source**, provide the secure GitHub raw asset URL link, and set a daily schedule refresh cadence matching the midnight execution routine.
+
 
