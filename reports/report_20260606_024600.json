@@ -1,0 +1,34 @@
+{
+    "execution_time": "2026-06-06T02:45:34.001090",
+    "successful_downloads": [
+        {
+            "repository": "who_gho",
+            "dataset": "life_expectancy",
+            "file": "v_20260606_024544_da31bbbd23f9214e090c5714f8829eac.csv"
+        }
+    ],
+    "failed_downloads": [
+        {
+            "repository": "world_bank",
+            "dataset": "gdp_current_usd",
+            "error": "400 Client Error: Bad Request for url: https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD?format=json&per_page=15000",
+            "timestamp": "2026-06-06T02:45:44.095942"
+        },
+        {
+            "repository": "world_bank",
+            "dataset": "total_population",
+            "error": "400 Client Error: Bad Request for url: https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=15000",
+            "timestamp": "2026-06-06T02:45:44.380941"
+        }
+    ],
+    "skipped_no_changes": [
+        {
+            "repository": "who_gho",
+            "dataset": "infant_mortality"
+        },
+        {
+            "repository": "kaggle",
+            "dataset": "avocado_prices"
+        }
+    ]
+}

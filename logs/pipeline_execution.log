@@ -48,3 +48,8 @@
 2026-06-05 02:58:50,239 [INFO] [who_gho] Stored structural version: v_20260605_025850_e0df9b33038762e7252046307fb29a91.csv
 2026-06-05 02:58:56,848 [INFO] [who_gho] Stored structural version: v_20260605_025856_3d092799138a29e5b3f97ea5277b79d9.csv
 2026-06-05 02:58:57,910 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-06-06 02:45:44,095 [ERROR] [world_bank] Ingestion error at 'gdp_current_usd': 400 Client Error: Bad Request for url: https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD?format=json&per_page=15000
+2026-06-06 02:45:44,380 [ERROR] [world_bank] Ingestion error at 'total_population': 400 Client Error: Bad Request for url: https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=15000
+2026-06-06 02:45:44,717 [INFO] [who_gho] Stored structural version: v_20260606_024544_da31bbbd23f9214e090c5714f8829eac.csv
+2026-06-06 02:45:59,365 [INFO] [who_gho] Data asset 'infant_mortality' shows no changes. Skipping.
+2026-06-06 02:46:00,055 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
