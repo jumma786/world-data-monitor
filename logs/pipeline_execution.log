@@ -78,3 +78,8 @@
 2026-06-11 03:32:40,297 [INFO] [who_gho] Stored structural version: v_20260611_033240_893683600ae9890139aceb059ad94304.csv
 2026-06-11 03:32:49,943 [INFO] [who_gho] Stored structural version: v_20260611_033249_39d215dd66250a456e542509c99db7c7.csv
 2026-06-11 03:32:50,708 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-06-12 03:32:57,374 [ERROR] [world_bank] Ingestion error at 'gdp_current_usd': HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)
+2026-06-12 03:32:58,755 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-06-12 03:33:05,914 [INFO] [who_gho] Stored structural version: v_20260612_033305_0bce7b508bfd4580776c4a98bbb002cb.csv
+2026-06-12 03:33:15,972 [INFO] [who_gho] Stored structural version: v_20260612_033315_becf4441c951b8d48de33eb4ac805598.csv
+2026-06-12 03:33:16,820 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
