@@ -1,0 +1,32 @@
+{
+    "execution_time": "2026-06-24T02:50:18.093736",
+    "successful_downloads": [],
+    "failed_downloads": [
+        {
+            "repository": "who_gho",
+            "dataset": "life_expectancy",
+            "error": "500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/WHOSIS_000001",
+            "timestamp": "2026-06-24T02:50:21.914390"
+        },
+        {
+            "repository": "who_gho",
+            "dataset": "infant_mortality",
+            "error": "500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/MDG_0000000001",
+            "timestamp": "2026-06-24T02:50:22.711607"
+        }
+    ],
+    "skipped_no_changes": [
+        {
+            "repository": "world_bank",
+            "dataset": "gdp_current_usd"
+        },
+        {
+            "repository": "world_bank",
+            "dataset": "total_population"
+        },
+        {
+            "repository": "kaggle",
+            "dataset": "avocado_prices"
+        }
+    ]
+}
