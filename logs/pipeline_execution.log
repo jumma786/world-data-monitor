@@ -143,3 +143,8 @@
 2026-06-24 02:50:21,914 [ERROR] [who_gho] Ingestion error at 'life_expectancy': 500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/WHOSIS_000001
 2026-06-24 02:50:22,711 [ERROR] [who_gho] Ingestion error at 'infant_mortality': 500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/MDG_0000000001
 2026-06-24 02:50:23,821 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-06-25 02:50:27,659 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-06-25 02:50:28,927 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-06-25 02:51:08,662 [INFO] [who_gho] Stored structural version: v_20260625_025108_bbbe0ac7ec5eef269fe796252b32fd1a.csv
+2026-06-25 02:51:13,610 [INFO] [who_gho] Stored structural version: v_20260625_025113_8de790b411b8dec7bc9c461fe84cfb35.csv
+2026-06-25 02:51:14,356 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
