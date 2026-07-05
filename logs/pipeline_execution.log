@@ -193,3 +193,8 @@
 2026-07-04 02:31:06,306 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
 2026-07-04 02:31:11,996 [INFO] [who_gho] Data asset 'infant_mortality' shows no changes. Skipping.
 2026-07-04 02:31:13,023 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-07-05 02:41:18,150 [ERROR] [world_bank] Ingestion error at 'gdp_current_usd': HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)
+2026-07-05 02:41:48,341 [ERROR] [world_bank] Ingestion error at 'total_population': HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)
+2026-07-05 02:41:50,959 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
+2026-07-05 02:41:58,663 [INFO] [who_gho] Data asset 'infant_mortality' shows no changes. Skipping.
+2026-07-05 02:41:59,446 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
