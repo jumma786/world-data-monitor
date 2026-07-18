@@ -14,7 +14,7 @@ The architecture ensures:
 
 - Automated daily ingestion
 - Clean and standardized datasets
-- Change detection using MD5 hashing
+- Change detection using SHA-256 hashing
 - Historical data versioning
 - Stable endpoints for BI dashboards
 - Secure secret management
@@ -34,7 +34,7 @@ The architecture ensures:
 | Scheduling | Cron Jobs |
 | Version Control | Git & GitHub |
 | Logging | Python Logging |
-| Data Validation | Hashlib (MD5) |
+| Data Validation | Hashlib (SHA-256) |
 | Storage Layer | Git-based Data Lakehouse |
 
 ---
@@ -60,7 +60,7 @@ Python ETL Pipeline
         ↓
 Data Cleaning & Transformation
         ↓
-MD5 Hash Validation (CDC)
+SHA-256 Hash Validation (CDC)
         ↓
 Versioned Data Storage
         ↓
@@ -111,7 +111,7 @@ Operations include:
 
 ## 4. Change Data Capture (CDC)
 
-The pipeline computes MD5 hashes for datasets.
+The pipeline computes SHA-256 hashes for datasets.
 
 If no changes are detected:
 - Storage writes are skipped
@@ -263,7 +263,7 @@ Aspiring Data Engineer & Data Analyst focused on automation, cloud pipelines, an
 ✅ Serverless Daily Execution  
 ✅ Multi-Source Data Ingestion  
 ✅ Production-Style Architecture  
-✅ Change Detection with MD5 Hashing  
+✅ Change Detection with SHA-256 Hashing  
 ✅ Historical Data Versioning  
 ✅ BI Tool Integration Ready  
 ✅ Real-World Data Engineering Workflow
