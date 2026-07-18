@@ -25,27 +25,28 @@ logging.basicConfig(
     ]
 )
 
+
 class DataPipelineMonitor:
     def __init__(self):
         self.execution_summary = {
-            "execution_time": datetime.datetime.utcnow().isoformat(),
+            "execution_time": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "successful_downloads": [],
             "failed_downloads": [],
             "skipped_no_changes": []
         }
 
-    def get_md5_hash(self, content: bytes) -> str:
-        """Generates file hashes to verify if contents have updated."""
-        return hashlib.md5(content).hexdigest()
+    def get_content_hash(self, content: bytes) -> str:
+        """Generates SHA-256 file hashes to verify if contents have updated."""
+        return hashlib.sha256(content).hexdigest()
 
     def save_file_with_versioning(self, repository: str, dataset_name: str, content: bytes, file_ext: str = "csv") -> None:
         """Saves dynamic version snapshots alongside an un-versioned entrypoint for data engines."""
         repo_path = os.path.join(BASE_DATA_DIR, repository, dataset_name)
         os.makedirs(repo_path, exist_ok=True)
 
-        new_hash = self.get_md5_hash(content)
-        timestamp = datetime.datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-        
+        new_hash = self.get_content_hash(content)
+        timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d_%H%M%S")
+
         # Verify deduplication constraints
         duplicate_found = False
         for existing_file in os.listdir(repo_path):
@@ -63,7 +64,7 @@ class DataPipelineMonitor:
         full_path = os.path.join(repo_path, filename)
         with open(full_path, "wb") as f:
             f.write(content)
-            
+
         # Update stable point-of-entry pointer file
         latest_path = os.path.join(repo_path, f"latest.{file_ext}")
         with open(latest_path, "wb") as f:
@@ -77,11 +78,12 @@ class DataPipelineMonitor:
     def track_failure(self, repository: str, dataset_name: str, error_msg: str):
         logging.error(f"[{repository}] Ingestion error at '{dataset_name}': {error_msg}")
         self.execution_summary["failed_downloads"].append({
-            "repository": repository, "dataset": dataset_name, "error": error_msg, "timestamp": datetime.datetime.utcnow().isoformat()
+            "repository": repository, "dataset": dataset_name, "error": error_msg,
+            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
         })
 
     def ingest_world_bank(self, indicator_code: str, dataset_alias: str):
-        url = f"http://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=15000"
+        url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=15000"
         try:
             response = requests.get(url, timeout=30)
             response.raise_for_status()
@@ -125,9 +127,10 @@ class DataPipelineMonitor:
             self.track_failure("kaggle", dataset_alias, str(e))
 
     def export_summary_report(self):
-        report_filename = f"report_{datetime.datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json"
+        report_filename = f"report_{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d_%H%M%S')}.json"
         with open(os.path.join(REPORT_DIR, report_filename), "w") as f:
             json.dump(self.execution_summary, f, indent=4)
+
 
 if __name__ == "__main__":
     pipeline = DataPipelineMonitor()
