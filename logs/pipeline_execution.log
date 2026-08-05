@@ -353,3 +353,8 @@
 2026-08-04 02:05:01,279 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
 2026-08-04 02:05:08,826 [INFO] [who_gho] Stored structural version: v_20260804_020508_04b696d794c7022da8af749dae02cc97fb4ef85a5c06b0d257773ad2bf0026e7.csv
 2026-08-04 02:05:09,795 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-08-05 02:03:44,753 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-08-05 02:03:46,803 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-08-05 02:03:47,229 [INFO] [who_gho] Stored structural version: v_20260805_020347_e4af3495fe3cac0fc4322406cf02b6b40de65e491e0fc5597d72cf6863ee33e1.csv
+2026-08-05 02:03:58,397 [INFO] [who_gho] Stored structural version: v_20260805_020358_23f366bf8dbc0708a016596c60f648a294056fa358e4167d8400a813a38f7c27.csv
+2026-08-05 02:03:59,397 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
