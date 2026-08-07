@@ -1,0 +1,36 @@
+{
+    "execution_time": "2026-08-07T02:26:47.630155+00:00",
+    "successful_downloads": [],
+    "failed_downloads": [
+        {
+            "repository": "world_bank",
+            "dataset": "gdp_current_usd",
+            "error": "HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)",
+            "timestamp": "2026-08-07T02:27:17.726510+00:00"
+        },
+        {
+            "repository": "world_bank",
+            "dataset": "total_population",
+            "error": "HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)",
+            "timestamp": "2026-08-07T02:27:47.777238+00:00"
+        },
+        {
+            "repository": "who_gho",
+            "dataset": "life_expectancy",
+            "error": "Response ended prematurely",
+            "timestamp": "2026-08-07T02:29:09.494999+00:00"
+        },
+        {
+            "repository": "who_gho",
+            "dataset": "infant_mortality",
+            "error": "HTTPSConnectionPool(host='ghoapi.azureedge.net', port=443): Read timed out. (read timeout=45)",
+            "timestamp": "2026-08-07T02:29:54.555602+00:00"
+        }
+    ],
+    "skipped_no_changes": [
+        {
+            "repository": "kaggle",
+            "dataset": "avocado_prices"
+        }
+    ]
+}
