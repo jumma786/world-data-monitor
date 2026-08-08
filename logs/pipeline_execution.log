@@ -368,3 +368,8 @@
 2026-08-07 02:29:09,494 [ERROR] [who_gho] Ingestion error at 'life_expectancy': Response ended prematurely
 2026-08-07 02:29:54,555 [ERROR] [who_gho] Ingestion error at 'infant_mortality': HTTPSConnectionPool(host='ghoapi.azureedge.net', port=443): Read timed out. (read timeout=45)
 2026-08-07 02:29:55,543 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-08-08 01:14:06,532 [ERROR] [world_bank] Ingestion error at 'gdp_current_usd': 400 Client Error: Bad Request for url: https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD?format=json&per_page=15000
+2026-08-08 01:14:07,855 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-08-08 01:14:10,649 [INFO] [who_gho] Stored structural version: v_20260808_011410_74d87afa3107736d42f3c29fe81cebad7649ac3584136eb7b42cdfefa4f1056a.csv
+2026-08-08 01:14:33,846 [INFO] [who_gho] Stored structural version: v_20260808_011433_4c070ee1a11093223a3ceced80cabfc97b711289e6e20978ba229408d256325b.csv
+2026-08-08 01:14:34,545 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
