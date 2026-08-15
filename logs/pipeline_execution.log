@@ -403,3 +403,8 @@
 2026-08-14 01:28:16,520 [INFO] [who_gho] Stored structural version: v_20260814_012816_55d877ef6bb73bd5148a8be6a6eaac9c1a3e62aceccd8934f9ef4d6cb76130e1.csv
 2026-08-14 01:28:26,583 [INFO] [who_gho] Stored structural version: v_20260814_012826_3b4d1c03254b59ced3c73cd8f1f6bf9f8de54e4dbac5dad5f46634c873fa8e6d.csv
 2026-08-14 01:28:27,389 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-08-15 00:58:20,740 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-08-15 00:58:21,999 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-08-15 00:58:22,297 [INFO] [who_gho] Stored structural version: v_20260815_005822_d0c394661fa22e9f1b5a2322b130d9703c3c529830c96acf011ef53d1cc4a1b1.csv
+2026-08-15 00:59:37,892 [ERROR] [who_gho] Ingestion error at 'infant_mortality': Response ended prematurely
+2026-08-15 00:59:38,779 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
