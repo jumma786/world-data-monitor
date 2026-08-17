@@ -413,3 +413,8 @@
 2026-08-16 01:02:33,692 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
 2026-08-16 01:07:40,746 [ERROR] [who_gho] Ingestion error at 'infant_mortality': Response ended prematurely
 2026-08-16 01:07:41,426 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-08-17 00:59:13,246 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-08-17 00:59:14,013 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-08-17 00:59:18,425 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
+2026-08-17 00:59:25,421 [INFO] [who_gho] Stored structural version: v_20260817_005925_0b1a3a04910b5b646290e773a6539f62e7f3f3b73143222b3d38a6d85f47cd89.csv
+2026-08-17 00:59:26,378 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
