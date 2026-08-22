@@ -438,3 +438,8 @@
 2026-08-21 01:04:03,835 [ERROR] [who_gho] Ingestion error at 'life_expectancy': ('Connection broken: IncompleteRead(8048 bytes read, 2192 more expected)', IncompleteRead(8048 bytes read, 2192 more expected))
 2026-08-21 01:06:34,847 [INFO] [who_gho] Stored structural version: v_20260821_010634_9a14f5554dee9fb6ab312199efd0862be4d031bd11ad01ca42d3e1996852758e.csv
 2026-08-21 01:06:35,550 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-08-22 00:58:24,953 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-08-22 00:58:26,310 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-08-22 00:58:26,698 [INFO] [who_gho] Stored structural version: v_20260822_005826_551975d52b45a9a41b159b0470c189399212a7d323f4cb389479f9cf381663d2.csv
+2026-08-22 01:03:23,580 [INFO] [who_gho] Stored structural version: v_20260822_010323_dbda0e0f4933340c29bf04d255387b26a91c6f5d300090734ae24ce844ad7a1d.csv
+2026-08-22 01:03:24,602 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
