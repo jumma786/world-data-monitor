@@ -523,3 +523,8 @@
 2026-09-07 02:36:16,871 [ERROR] [who_gho] Ingestion error at 'life_expectancy': HTTPSConnectionPool(host='ghoapi.azureedge.net', port=443): Read timed out. (read timeout=45)
 2026-09-07 02:37:01,945 [ERROR] [who_gho] Ingestion error at 'infant_mortality': HTTPSConnectionPool(host='ghoapi.azureedge.net', port=443): Read timed out. (read timeout=45)
 2026-09-07 02:37:03,252 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-09-08 02:48:59,270 [ERROR] [world_bank] Ingestion error at 'gdp_current_usd': HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)
+2026-09-08 02:49:00,393 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-09-08 02:49:00,688 [INFO] [who_gho] Stored structural version: v_20260908_024900_ffdea1a91ea7ff052b3835dca1db9919f67dc1ac382cff48cfb76e3011bf8e60.csv
+2026-09-08 02:49:05,287 [INFO] [who_gho] Stored structural version: v_20260908_024905_d323489346621647e9df85698f7d5d545b6770ed27ad0dcbce966d30345dd2b0.csv
+2026-09-08 02:49:06,046 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
