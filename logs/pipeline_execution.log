@@ -673,3 +673,8 @@
 2026-10-07 04:00:04,749 [ERROR] [who_gho] Ingestion error at 'life_expectancy': Expecting value: line 1 column 2 (char 1)
 2026-10-07 04:00:06,366 [ERROR] [who_gho] Ingestion error at 'infant_mortality': Expecting value: line 1 column 2 (char 1)
 2026-10-07 04:00:07,284 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-10-08 04:12:41,345 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-10-08 04:12:42,304 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-10-08 04:12:43,052 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
+2026-10-08 04:12:43,564 [ERROR] [who_gho] Ingestion error at 'infant_mortality': 502 Server Error: Bad Gateway for url: https://ghoapi.azureedge.net/api/MDG_0000000001
+2026-10-08 04:12:44,600 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
