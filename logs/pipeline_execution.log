@@ -683,3 +683,8 @@
 2026-10-09 04:18:23,029 [INFO] [who_gho] Stored structural version: v_20261009_041823_a330a2662498863707a8302bf708bbdff7e8350bdad7ad7800ef6cf6c7566d49.csv
 2026-10-09 04:18:28,000 [INFO] [who_gho] Stored structural version: v_20261009_041827_cdab6264c2b7092cb207b4dc0941b4a20cf246c16f5fd2150a3943e3323708f3.csv
 2026-10-09 04:18:28,598 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-10-10 04:03:24,383 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-10-10 04:03:27,171 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-10-10 04:03:28,717 [INFO] [who_gho] Stored structural version: v_20261010_040328_867c59bab521fc0f2bb311b3c1e305d6e9e31ff4aa06bc9f3f59895473178676.csv
+2026-10-10 04:03:29,643 [ERROR] [who_gho] Ingestion error at 'infant_mortality': 502 Server Error: Bad Gateway for url: https://ghoapi.azureedge.net/api/MDG_0000000001
+2026-10-10 04:03:30,628 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
