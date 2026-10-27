@@ -768,3 +768,8 @@
 2026-10-26 02:55:53,867 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
 2026-10-26 02:55:59,548 [INFO] [who_gho] Data asset 'infant_mortality' shows no changes. Skipping.
 2026-10-26 02:56:00,365 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-10-27 03:28:40,842 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-10-27 03:28:41,846 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-10-27 03:28:42,737 [INFO] [who_gho] Data asset 'life_expectancy' shows no changes. Skipping.
+2026-10-27 03:28:43,288 [ERROR] [who_gho] Ingestion error at 'infant_mortality': 500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/MDG_0000000001
+2026-10-27 03:28:44,021 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
