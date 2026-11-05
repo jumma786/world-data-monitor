@@ -813,3 +813,8 @@
 2026-11-04 04:37:43,804 [ERROR] [who_gho] Ingestion error at 'life_expectancy': 500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/WHOSIS_000001
 2026-11-04 04:37:44,725 [ERROR] [who_gho] Ingestion error at 'infant_mortality': 500 Server Error: Internal Server Error for url: https://ghoapi.azureedge.net/api/MDG_0000000001
 2026-11-04 04:37:45,600 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-11-05 04:52:56,819 [ERROR] [world_bank] Ingestion error at 'gdp_current_usd': HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30)
+2026-11-05 04:53:13,741 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-11-05 04:53:13,968 [INFO] [who_gho] Stored structural version: v_20261105_045313_67cced35ae84ab4e03261238ee77d5cd0ac53748998a0620cee5316674a629c7.csv
+2026-11-05 04:53:21,573 [INFO] [who_gho] Stored structural version: v_20261105_045321_a8ab8adb3ae047f4a2fe242e91246ed13c5ef9bd12af5ca0557f36469fd6e739.csv
+2026-11-05 04:53:22,578 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
