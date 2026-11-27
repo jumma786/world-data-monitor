@@ -923,3 +923,8 @@
 2026-11-26 06:36:05,490 [INFO] [who_gho] Stored structural version: v_20261126_063605_73cf807a9ef44b20c185a47b0786ef387d90cf9e140b609fd265123943a97cad.csv
 2026-11-26 06:36:10,724 [INFO] [who_gho] Stored structural version: v_20261126_063610_9d1b3961ec0a9434c4b40c4572cd649fef73edcc7c13d202f6d0932f0493e482.csv
 2026-11-26 06:36:11,144 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
+2026-11-27 06:26:19,715 [INFO] [world_bank] Data asset 'gdp_current_usd' shows no changes. Skipping.
+2026-11-27 06:26:21,020 [INFO] [world_bank] Data asset 'total_population' shows no changes. Skipping.
+2026-11-27 06:26:25,417 [INFO] [who_gho] Stored structural version: v_20261127_062625_2fe1413f4cc4775d7b654ddb99630b6d15aa1b4eba4c4b4c358f89db970c1e3d.csv
+2026-11-27 06:26:35,845 [INFO] [who_gho] Stored structural version: v_20261127_062635_54c9d8cc3b4041b3abd0abefb2e5f43363d28a5c02c0c12dc8656ce4f4ecdadc.csv
+2026-11-27 06:26:36,637 [INFO] [kaggle] Data asset 'avocado_prices' shows no changes. Skipping.
